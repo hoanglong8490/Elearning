@@ -1,0 +1,75 @@
+.sidebarMini {
+  position: fixed;
+  top: 25%;
+  right: 0;
+  width: 400px;
+  background-color: $color-gray-4;
+  z-index: 500;
+  transform: translateX(100%);
+  transition: .5s;
+  .sidebarMini__button {
+    @include styleButton(
+      $color-black-0,
+      $color-gray-4,
+      $color-gray-4,
+      $fs-3,
+      $fw-0,
+      $pd-0 - 5,
+      $pd-1 + 5
+    );
+    transition: .5s;
+    border-radius: 8px 0 0 8px;
+    position: fixed;
+    transform: translateX(-100%);
+    &:focus{
+      outline: none;
+    }
+  }
+  .sidebarMini__content {
+    width: 150px;
+    text-align: center;
+    padding: $pd-1 + 5;
+    h2 {
+      font-size: $fs-1;
+    }
+    .switch {
+      width: 50px;
+      height: 25px;
+      margin: 0 $mg-0 + 5;
+      position: relative;
+      cursor: pointer;
+      input {
+        display: none;
+        &:checked + .slider{
+          &::before{
+            transform: translateX(22px);
+          }
+        }
+      }
+      .slider {
+        background-color: $color-gray-3;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border-radius: $boder-darius + 32 ;
+        &::before{
+            content: "";
+            width: 18px;
+            height: 18px;
+            background-color: $color-white-0;
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            transition: all .5s;
+        }
+      }
+    }
+  }
+  &.is-opened{
+    transform: translateX(60%);
+  }
+}

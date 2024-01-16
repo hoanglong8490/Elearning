@@ -1,0 +1,24 @@
+.viewing {
+    padding: $fs-3 -4;
+  .viewing__content {
+    width: 90%;
+    margin: auto;
+    h2 {
+      font-size: $fs-2;
+    }
+  }
+  @include reponsive("screen-1") {
+    .viewing__content {
+      .card {
+        height: 275px;
+        margin-right: 1px;
+        .card-body {
+          .card-title {
+            @include styleText($color-black-0, $fs-0, $fw-1);
+            margin-bottom: $mg-0 + 5;
+          }
+        }
+      }
+    }
+  }
+}
